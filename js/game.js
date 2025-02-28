@@ -1,27 +1,30 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED } from "./snake.js";
 
 let lastRenderTime = 0;
+const gameBoard = document.getElementById
+('game-board');
 
 function main(currentTime){
-    window.requestAnimationFrame(main)
-    const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
-    if (secondsSinceLastRender < 1 / SNAKE_SPEED) return
+    window.requestAnimationFrame(main);
+    const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000;
+    if (secondsSinceLastRender < 1 / SNAKE_SPEED) return;
 
 
-    console.log('Render')
-    lastRenderTime = currentTime
+    console.log('Render');
+    lastRenderTime = currentTime;
 
-    update()
-    draw()
+    update();
+    draw();
 
 }
 
 window.requestAnimationFrame(main)
 
 function update() {
-    updateSnake()
+    updateSnake();
 }
 function draw() {
-    drawSnake()
+    gameBoard.innerHTML
+    drawSnake();
 
 }
